@@ -1,7 +1,9 @@
 package actions;
 
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 
 import javax.servlet.RequestDispatcher;
@@ -18,7 +20,7 @@ import constants.PropertyConst;
  * 各Actionクラスの親クラス。共通処理を行う。
  *
  */
-public class ActionBase {
+public abstract class ActionBase {
     protected ServletContext context;
     protected HttpServletRequest request;
     protected HttpServletResponse response;
@@ -136,6 +138,7 @@ public class ActionBase {
         }
 
     }
+
     /**
      * セッションIDを取得する
      * @return セッションID
@@ -162,7 +165,6 @@ public class ActionBase {
      * @param strNumber 変換前文字列
      * @return 変換後数値
      */
-
     protected int toNumber(String strNumber) {
         int number = 0;
         try {
@@ -190,7 +192,6 @@ public class ActionBase {
      * @param key パラメータ名
      * @return パラメータの値
      */
-
     protected String getRequestParam(AttributeConst key) {
         return request.getParameter(key.getValue());
     }
@@ -219,7 +220,6 @@ public class ActionBase {
      * @param key パラメータ名
      * @param value パラメータの値
      */
-
     protected <V> void putSessionScope(AttributeConst key, V value) {
         request.getSession().setAttribute(key.getValue(), value);
     }
@@ -241,6 +241,5 @@ public class ActionBase {
     protected <R> R getContextScope(PropertyConst key) {
         return (R) context.getAttribute(key.getValue());
     }
-
 
 }
