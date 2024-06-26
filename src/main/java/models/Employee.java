@@ -76,6 +76,7 @@ public class Employee {
     @Column(name = JpaConst.EMP_COL_ADMIN_FLAG, nullable = false)
     private Integer adminFlag;
 
+
     /**
      *登録日時
      */

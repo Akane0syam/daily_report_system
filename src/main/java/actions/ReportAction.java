@@ -113,6 +113,8 @@ public class ReportAction extends ActionBase {
                     day,
                     getRequestParam(AttributeConst.REP_TITLE),
                     getRequestParam(AttributeConst.REP_CONTENT),
+                    getRequestParam(AttributeConst.REP_SYUKKIN),
+                    getRequestParam(AttributeConst.REP_TAIKIN),
                     null,
                     null);
 
@@ -210,6 +212,8 @@ public class ReportAction extends ActionBase {
             rv.setReportDate(toLocalDate(getRequestParam(AttributeConst.REP_DATE)));
             rv.setTitle(getRequestParam(AttributeConst.REP_TITLE));
             rv.setContent(getRequestParam(AttributeConst.REP_CONTENT));
+            rv.setSyukkin(getRequestParam(AttributeConst.REP_SYUKKIN));
+            rv.setTaikin(getRequestParam(AttributeConst.REP_TAIKIN));
 
             //日報データを更新する
             List<String> errors = service.update(rv);

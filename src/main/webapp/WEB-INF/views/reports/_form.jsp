@@ -21,6 +21,13 @@
 <c:out value="${sessionScope.login_employee.name}" />
 <br /><br />
 
+<label>出勤時間</label><br />
+<input type="time" name="${AttributeConst.REP_SYUKKIN.getValue()}" id="${AttributeConst.REP_SYUKKIN.getValue()}"/><br />
+
+<label>退勤時間</label><br />
+<input type="time" name="${AttributeConst.REP_TAIKIN.getValue()}" id="${AttributeConst.REP_TAIKIN.getValue()}"/><br />
+<br /><br />
+
 <label for="${AttributeConst.REP_TITLE.getValue()}">タイトル</label><br />
 <input type="text" name="${AttributeConst.REP_TITLE.getValue()}" id="${AttributeConst.REP_TITLE.getValue()}" value="${report.title}" />
 <br /><br />

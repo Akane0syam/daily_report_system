@@ -82,6 +82,18 @@ public class Report {
     private String content;
 
     /**
+     * 出勤時間
+    */
+    @Column(name = JpaConst.REP_COL_SYUKKIN, nullable = true)
+    private String syukkin;
+
+    /**
+     * 退勤時間
+     */
+    @Column(name = JpaConst.REP_COL_TAIKIN, nullable = true)
+    private String taikin;
+
+    /**
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)
@@ -92,5 +104,7 @@ public class Report {
      */
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
+
+
 
 }
